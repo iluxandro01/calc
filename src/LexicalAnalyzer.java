@@ -1,4 +1,3 @@
-import java.lang.invoke.SwitchPoint;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
