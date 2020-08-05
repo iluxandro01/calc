@@ -29,15 +29,9 @@ public class Logic {
             return;
         }
 
-        if (analyzedInput[3].equals("-")) {
-            firstNumber *= -1;
-        }
 
-        if (analyzedInput[4].equals("-")) {
-            secondNumber *= -1;
-        }
 
-        if (!((Math.abs(firstNumber) >= 1 && Math.abs(firstNumber) <= 10) || (Math.abs(secondNumber) >= 1 && Math.abs(secondNumber) <= 10))) {
+        if (!((firstNumber >= 1 && firstNumber <= 10) || (secondNumber >= 1 && secondNumber <= 10))) {
             System.out.println("Неверный ввод! (Цифры должны быть 1...10)");
             return;
         }
@@ -45,6 +39,14 @@ public class Logic {
         if (!(action.equals("+") || action.equals("-") || action.equals("/") || action.equals("*"))) {
             System.out.println("Неверный ввод! (Доступны только операции [+-/*])");
             return;
+        }
+
+        if (analyzedInput[3].equals("-")) {
+            firstNumber *= -1;
+        }
+
+        if (analyzedInput[4].equals("-")) {
+            secondNumber *= -1;
         }
 
         Calculator.calculate(firstNumber, secondNumber, action, isRoman);
